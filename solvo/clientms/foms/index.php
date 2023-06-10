@@ -156,7 +156,7 @@ include 'includes/wallet.php';
                         <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-action-question-answer"></i> Tickets</a>
                             <div class="collapsible-body">
                                 <ul>
-								<li><a href="tickets.php">All Tickets</a>
+								<li><a href="tickets.php">All Ticke</a>
                                 </li>
 								<?php
 									$sql = mysqli_query($con, "SELECT DISTINCT status FROM tickets WHERE poster_id = $user_id AND not deleted;");
