@@ -66,9 +66,9 @@ END - Breadcrumbs
                             <div class="form-group"><label for="">Change Status</label>
                                 <select name="status" class="form-control" >
                                     <option>--Select--</option>
-                                    <option value="Open">Open</option>
-                                    <option value="WIP">WIP</option>
-                                    <option value="Close">Close</option>  
+                                    <option value="Open">in progress</option>
+                                    <option value="WIP">Done</option>
+                                    <option value="Close">Evaluate</option>  
                                     <option value="Cancel">Cancel</option>
                                 </select>
                             </div>

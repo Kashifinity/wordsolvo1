@@ -130,14 +130,14 @@ include 'includes/connect.php';
                 </div>
             </div>
             </li>
-            <li class="bold active"><a href="index.php" class=""><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <li class="bold active"><a href="admin-page.php" class=""><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 1H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
 <path d="M1 6H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
 <path d="M1 11H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
 </svg>
  New</a>
             </li>
-            <li class="bold"><a href="../task_management/task_management/dashboardL.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Quick Links</a>
+          
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-editor-insert-invitation"></i> Orders</a>

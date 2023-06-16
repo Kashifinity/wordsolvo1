@@ -321,13 +321,7 @@ $username = $row['username'];
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
    <!-- START FOOTER -->
-   <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-      <span>Copyright © <?php echo date("Y"); ?><span class="right"><a class="grey-text text-lighten-4" href="https://sourcecodester.com">SourceCodester</a></span>
-        </div>
-    </div>
-  </footer>
+   
     <!-- END FOOTER -->
 
 

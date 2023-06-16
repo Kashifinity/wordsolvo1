@@ -75,7 +75,7 @@ include 'includes/connect.php';
                 <div class="col col s4 m4 l4">
                     <img src="images/userav.png" alt="" class="circle responsive-img valign profile-image">
                 </div>
-				<div class="col col s8 m8 l8">
+				 <div class="col col s8 m8 l8">
                     <ul id="profile-dropdown" class="dropdown-content">
                         <li><a href="routers/logout.php"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
                         </li>
@@ -87,26 +87,25 @@ include 'includes/connect.php';
                 </div>
             </div>
             </li>
-            <li class="bold"><a href="index.php" class="waves-effect waves-light-blue"><i class="mdi-maps-local-restaurant"></i> Food Menu</a>
+            <li><a href="index.php" class=""><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 6H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 11H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+</svg>
+ New</a>
             </li>
+           
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
-                        <li class="bold"><a class="collapsible-header waves-effect waves-light-blue active"><i class="mdi-editor-insert-invitation"></i> Orders</a>
+                        <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-editor-insert-invitation"></i> Orders</a>
                             <div class="collapsible-body">
                                 <ul>
-								<li class="<?php
-								if(!isset($_GET['status'])){
-										echo 'active';
-									}?>
-									"><a href="all-orders.php">All Orders</a>
+								<li class="bold active"><a href="all-orders.php">All Orders</a>
                                 </li>
 								<?php
 									$sql = mysqli_query($con, "SELECT DISTINCT status FROM orders;");
 									while($row = mysqli_fetch_array($sql)){
-									if(isset($_GET['status'])){
-										$status = $row['status'];
-									}
-                                    echo '<li class='.(isset($_GET['status'])?($status == $_GET['status'] ? 'active' : ''): '').'><a href="all-orders.php?status='.$row['status'].'">'.$row['status'].'</a>
+                                    echo '<li><a href="all-orders.php?status='.$row['status'].'">'.$row['status'].'</a>
                                     </li>';
 									}
 									?>
@@ -120,7 +119,7 @@ include 'includes/connect.php';
                         <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-action-question-answer"></i> Tickets</a>
                             <div class="collapsible-body">
                                 <ul>
-								<li><a href="all-tickets.php">Clarifications</a>
+								<li><a href="all-tickets.php">All Tickets</a>
                                 </li>
 								<?php
 									$sql = mysqli_query($con, "SELECT DISTINCT status FROM tickets;");
@@ -135,6 +134,10 @@ include 'includes/connect.php';
                     </ul>
                 </li>			
             <li class="bold"><a href="users.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Users</a>
+            <li class="bold"><a href="../task_management/task_management/employee.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Writers</a>
+            <li class="bold"><a href="../task_management/task_management/assign_task.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assign Task</a>
+            <li class="bold"><a href="../task_management/task_management/assign_task_list.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assigned Tasks</a>
+
             </li>				
         </ul>
         <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only  light-blue"><i class="mdi-navigation-menu"></i></a>

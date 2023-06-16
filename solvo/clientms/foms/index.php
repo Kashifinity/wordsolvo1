@@ -14,6 +14,12 @@ include 'includes/wallet.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
   <title>Solvo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
   <!-- Favicons-->
   <link rel="icon" href="images/favicon/favicon_32x32.png" sizes="32x32">
@@ -140,7 +146,10 @@ include 'includes/wallet.php';
 								<li><a href="orders.php">All Orders</a>
                                 </li>
 								<?php
-									$sql = mysqli_query($con, "SELECT DISTINCT status FROM orders WHERE customer_id = $user_id;");
+									$sql = mysqli_query($con, "SELECT DISTINCT status FROM orders
+                  
+                  
+                   WHERE customer_id = $user_id;");
 									while($row = mysqli_fetch_array($sql)){
                                     echo '<li><a href="orders.php?status='.$row['status'].'">'.$row['status'].'</a>
                                     </li>';
@@ -197,52 +206,74 @@ include 'includes/wallet.php';
 
 
         <!--start container-->
-        <div class="container">
-          <p class="caption">Order your food here.</p>
-          <div class="divider"></div>
-		  <form class="formValidate" id="formValidate" method="post" action="place-order.php" novalidate="novalidate">
+        
+		  <form class="formValidate" id="formValidate" method="post"  novalidate="novalidate">
             <div class="row">
-              <div class="col s12 m4 l3">
-                <h4 class="header">Request Service</h4>
-              </div>
+              
               <div>
-                  <table id="data-table-customer" class="responsive-table display" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                      </tr>
-                    </thead>
+              <div class="col s12 m12 l6">
+              <div class="card-panel">
+                <h4 class="header2">Place an Order</h4>
+                <div class="row">
+                  <form class="col s12" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <div class="row">
+                    <div class="input-field col s12">
+  <input id="category" name="category" type="text" class="validate">
+  <label for="category">Category</label>
+</div>
 
-                    <tbody>
-				<?php
-				$result = mysqli_query($con, "SELECT * FROM items where not deleted;");
-				while($row = mysqli_fetch_array($result))
-				{
-					echo '<tr><td>'.$row["name"].'</td><td>'.'$ '.$row["price"].'</td>';                      
-					echo '<td><div class="input-field col s12"><label></label>';
-					echo '<select id="'.$row["id"].'" name="'.$row["id"].'" class="select-option">'.
-         '<option value="0">Select</option><option value="1">Selected</option></select>'.
-         '</div></td></tr>';
-				}
-				?>
-                    </tbody>
-</table>
+                 <div class="row">
+                      <div class="input-field col s12">
+                        <input id="word_count" name="word_count" type="text" class="validate">
+                        <label for="word_count">Word Count</label>
+                      </div>
+                      <div class="row">
+                      <div class="input-field col s12">
+                        <input id="title" name="title" type="text" class="validate">
+                        <label for="title">Title</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                      <p>File</p>
+                        <input id="files" name="files" type="file" class="validate">
+                        
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="description" name="description" type="text" class="validate">
+                        <label for="description">Description</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="email" name="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="modeofpayment" name="modeofpayment" type="text" class="validate">
+                        <label for="modeofpayment">Mode of Payment</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light" type="submit" name="submit">Place Order
+                          <i class="mdi-content-send right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-			  <div class="input-field col s12">
-              <i class="mdi-editor-mode-edit prefix"></i>
-              <textarea id="description" name="description" class="materialize-textarea"></textarea>
-              <label for="description" class="">Any note(optional)</label>
-			  </div>
-			  <div>
-			  <div class="input-field col s12">
-                              <button class="btn  light-blue waves-effect waves-light right" type="submit" name="action">Order
-                                <i class="mdi-content-send right"></i>
-                              </button>
-                            </div>
             </div>
-			</form>
+			
+              </div>
+              </form>
+			 
+	
             <div class="divider"></div>
             
           </div>
@@ -260,13 +291,7 @@ include 'includes/wallet.php';
 
   <!-- //////////////////////////////////////////////////////////////////////////// -->
  <!-- START FOOTER -->
- <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-      <span>Copyright © <?php echo date("Y"); ?><span class="right"><a class="grey-text text-lighten-4" href="https://thetechnogen.in">The TechnoGen</a></span>
-      </div>
-    </div>
-  </footer>
+ 
     <!-- END FOOTER -->
 
 
@@ -294,48 +319,59 @@ include 'includes/wallet.php';
     <script type="text/javascript" src="js/plugins.min.js"></script>
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="js/custom-script.js"></script>
-    <script type="text/javascript">
-    $("#formValidate").validate({
-        rules: {
-			<?php
-			$result = mysqli_query($con, "SELECT * FROM items where not deleted;");
-			while($row = mysqli_fetch_array($result))
-			{
-				echo $row["id"].':{
-				min: 0,
-				max: 10
-				},
-				';
-			}
-		echo '},';
-		?>
-        messages: {
-			<?php
-			$result = mysqli_query($con, "SELECT * FROM items where not deleted;");
-			while($row = mysqli_fetch_array($result))
-			{  
-				echo $row["id"].':{
-				min: "Minimum 0",
-				max: "Maximum 10"
-				},
-				';
-			}
-		echo '},';
-		?>
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-          var placement = $(element).data('error');
-          if (placement) {
-            $(placement).append(error)
-          } else {
-            error.insertAfter(element);
-          }
-        }
-     });
-    </script>
+   
 </body>
 
 </html>
+<?php
+// Include the database connection file
+include 'includes/connect.php';
+
+// Define variables and set them to empty values
+$category = $word_count = $title = $description = $email = $modeofpayment = '';
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data and sanitize
+    $category = $this->sanitizeInput($_POST['category']);
+    $word_count =  $this->sanitizeInput($_POST['word_count']);
+    $title =  $this->sanitizeInput($_POST['title']);
+    $description =  $this->sanitizeInput($_POST['description']);
+    $email =  $this->sanitizeInput($_POST['email']);
+    $modeofpayment =  $this->sanitizeInput($_POST['modeofpayment']);
+    
+    // Perform any necessary validation on the form data
+    // ...
+
+    // Insert the form data into the table
+    $query = "INSERT INTO orderz (category, word_count, title, description, email, modeofpayment)
+              VALUES ('$category', '$word_count', '$title', '$description', '$email', '$modeofpayment')";
+
+    if (mysqli_query($con, $query)) {
+        // Data saved successfully
+        echo "Form data saved successfully.";
+    } else {
+        // Error occurred while saving data
+        echo "Error: " . mysqli_error($con);
+    }
+}
+
+// Function to sanitize form input
+function sanitizeInput($input)
+{
+    global $con; // Assuming you have the database connection available globally
+
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    $input = mysqli_real_escape_string($con, $input);
+
+    return $input;
+}
+?>
+
+
+
 <?php
 	}
 	else

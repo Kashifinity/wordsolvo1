@@ -128,8 +128,14 @@ include 'includes/connect.php';
                 </div>
             </div>
             </li>
-            <li class="bold"><a href="admin-page.php" class="waves-effect waves-light-blue"><i class="mdi-maps-local-restaurant"></i>New</a>
+            <li><a href="admin-page.php" class=""><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 6H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 11H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
+</svg>
+ New</a>
             </li>
+          
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-editor-insert-invitation"></i> Orders</a>
@@ -169,7 +175,11 @@ include 'includes/connect.php';
                     </ul>
                 </li>			
             <li class="bold active"><a href="users.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Users</a>
-            </li>			
+            <li class="bold"><a href="../task_management/task_management/employee.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Writers</a>
+            <li class="bold"><a href="../task_management/task_management/assign_task.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assign Task</a>
+            <li class="bold"><a href="../task_management/task_management/assign_task_list.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assigned Tasks</a>
+
+            </li>				
         </ul>
         <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only  light-blue"><i class="mdi-navigation-menu"></i></a>
         </aside>
@@ -338,13 +348,7 @@ include 'includes/connect.php';
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
    <!-- START FOOTER -->
-   <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-      <span>Copyright © <?php echo date("Y"); ?><span class="right"><a class="grey-text text-lighten-4" href="https://sourcecodester.com">SourceCodester</a></span>
-        </div>
-    </div>
-  </footer>
+   
     <!-- END FOOTER -->
 
 

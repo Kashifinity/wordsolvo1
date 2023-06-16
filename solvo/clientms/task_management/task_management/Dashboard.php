@@ -43,7 +43,8 @@ START - Breadcrumbs
 -------------------->
 <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><span>Manager</span></li>
+    <li class="breadcrumb-item"><span>Dashboard</span></li>
+    <li class="breadcrumb-item"><a href="index.php">Logout</a></li>
 </ul>
 <!--------------------
 END - Breadcrumbs

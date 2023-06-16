@@ -86,19 +86,19 @@ if ($result = mysqli_query($connection, $retailer_account)) {
                             </div>
                             <div class="col-sm-4 col-xxxl-3">
                                 <a class="element-box el-tablo" href="emp_assign_task_list_open.php">
-                                    <div class="label">Task started</div>
+                                    <div class="label">In Progress</div>
                                     <div class="value"><?php echo $open_task; ?></div>
  </a>
                             </div>
                             <div class="col-sm-4 col-xxxl-3">
                                 <a class="element-box el-tablo" href="emp_assign_task_list_close.php">
-                                    <div class="label">Task done</div>
+                                    <div class="label">Sent to QA</div>
                                     <div class="value"><?php echo $close_task; ?></div>
  </a>
                             </div>
                             <div class="col-sm-4 col-xxxl-3">
                                 <a class="element-box el-tablo" href="emp_assign_task_list_wip.php">
-                                    <div class="label">Task in progress</div>
+                                    <div class="label">Task Done</div>
                                     <div class="value"><?php echo $WIP_task; ?></div>
                                </a>
                             </div>
