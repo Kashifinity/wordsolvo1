@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_assoc($qry)) {
                                         <!--<label for="">Conform Password</label>-->
                                         <!--<input class="form-control" name="CPSWD" placeholder="Conform Password" type="password">-->
                                     </div>
-                                    <button><a href=".\.\foms\admin-page.php">Back to Dashboard</a></button>
+                                    <button><a href=".\foms\admin-page.php">Back to Dashboard</a></button>
                                 </div>
 
 

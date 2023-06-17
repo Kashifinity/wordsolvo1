@@ -58,9 +58,14 @@ END - Breadcrumbs
         {
                include './includes/admin_dashboard.php';  
         } 
+        elseif($_SESSION['User_type']=='QA')
+        {
+               include './includes/admin_dashboard.php';  
+        } 
  else {
        include './includes/emp_dashboard.php';   
  }
+ 
       
         
         ?>

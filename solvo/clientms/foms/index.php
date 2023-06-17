@@ -323,9 +323,21 @@ include 'includes/wallet.php';
 </body>
 
 </html>
+
 <?php
-// Include the database connection file
-include 'includes/connect.php';
+	}
+	else
+	{
+		if(isset($_SESSION['admin_sid']))
+		{
+			header("location:admin-page.php");		
+		}
+		else{
+			header("location:login.php");
+		}
+	}
+
+
 
 // Define variables and set them to empty values
 $category = $word_count = $title = $description = $email = $modeofpayment = '';
@@ -333,12 +345,12 @@ $category = $word_count = $title = $description = $email = $modeofpayment = '';
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data and sanitize
-    $category = $this->sanitizeInput($_POST['category']);
-    $word_count =  $this->sanitizeInput($_POST['word_count']);
-    $title =  $this->sanitizeInput($_POST['title']);
-    $description =  $this->sanitizeInput($_POST['description']);
-    $email =  $this->sanitizeInput($_POST['email']);
-    $modeofpayment =  $this->sanitizeInput($_POST['modeofpayment']);
+    $category = sanitizeInput($_POST['category']);
+    $word_count =  sanitizeInput($_POST['word_count']);
+    $title =  sanitizeInput($_POST['title']);
+    $description = sanitizeInput($_POST['description']);
+    $email =  sanitizeInput($_POST['email']);
+    $modeofpayment =  sanitizeInput($_POST['modeofpayment']);
     
     // Perform any necessary validation on the form data
     // ...
@@ -371,17 +383,3 @@ function sanitizeInput($input)
 ?>
 
 
-
-<?php
-	}
-	else
-	{
-		if(isset($_SESSION['admin_sid']))
-		{
-			header("location:admin-page.php");		
-		}
-		else{
-			header("location:login.php");
-		}
-	}
-?>

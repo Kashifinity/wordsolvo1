@@ -217,6 +217,28 @@ include 'includes/connect.php';
 							'.(!empty($row['description']) ? '<p><strong>Note: </strong>'.$row['description'].'</p>' : '').'								
                             </li>';							
 							}
+                            while ($row1 = mysqli_fetch_array($sql1)) {
+                                $item_id = $row1['id'];
+                                $item_name = $row1['category'];
+                                $title = $row1['title'];
+                                $modeofpayment = $row1['modeofpayment'];
+                                
+                                echo '<li class="collection-item">
+                                    <div class="row">
+                                        <div class="col s7">
+                                            <p class="collections-title"><strong>#'.$row1['id'].'</strong> '.$item_name.'</p>
+                                        </div>
+                                        <div class="col s2">
+                                            <span>'.$title.' (Quantity)</span>
+                                        </div>
+                                        <div class="col s3">
+                                            <span>$'.$modeofpayment.'</span>
+                                        </div>
+                                    </div>
+                                </li>';
+                            }
+                            
+                            
 						while($row1 = mysqli_fetch_array($sql1))
 						{
 							$item_id = $row1['item_id'];
@@ -277,13 +299,7 @@ include 'includes/connect.php';
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
  <!-- START FOOTER -->
- <footer class="page-footer">
-    <div class="footer-copyright">
-      <div class="container">
-      <span>Copyright © <?php echo date("Y"); ?><span class="right"><a class="grey-text text-lighten-4" href="https://sourcecodester.com">SourceCodester</a></span>
-        </div>
-    </div>
-  </footer>
+ 
     <!-- END FOOTER -->
 
 

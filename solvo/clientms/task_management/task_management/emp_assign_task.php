@@ -14,9 +14,11 @@ if (isset($_POST['submit'])) {
        $emp_id=  $_SESSION['user'];
     $employee_id =$emp_id; //$_POST['empid'];
            $task  = $_POST['task'];
+           $category = $_POST['category'];
+           $nwords = $_POST['nwords'];
            //  = $_POST['file_attachment'];
-    $query = "INSERT INTO `assign_task`( `emp_id`, `task`, `assignby`, `task_doc`, `work_assign_date`, `status`)";
-     $query .= " VALUES ('$employee_id','$task','Employee','$task_doc',now(),'Open')";
+    $query = "INSERT INTO `assign_task`( `emp_id`, `task`, `assignby`, `task_doc`, `work_assign_date`, `status`,`category`,`nwords`)";
+     $query .= " VALUES ('$employee_id','$task','Employee','$task_doc',now(),'Open','$category', '$nwords')";
     $update_password = mysqli_query($connection, $query);
     if (!$update_password) {
         die('QUERY FAILD change pashword' . mysqli_error($connection));
@@ -82,10 +84,45 @@ while ($row = mysqli_fetch_assoc($qry)) {
                                     </div>
                                 </div>-->
                                 <div class="col-sm-3">
+                                    <div class="form-group"><label for="">Writer    </label>
+                                        <select id="emp_id" name="empid" class="form-control">
+                                            <option>--select Writer--</option>
+                                                                                                       <?php
+                                                          
+                 $qry = mysqli_query($connection, "SELECT * FROM emp_login where user_role='employee' and status='1'") or die("select query fail" . mysqli_error());
+$count = 0;
+while ($row = mysqli_fetch_assoc($qry)) {
+    $count = $count + 1;
+  
+    $id = $row['id'];
+            $emp_code = $row['emp_code'];
+            $emp_name = $row['emp_name'];
+        
+            echo "<option value=".$id.">".$emp_code."/".$emp_name."</option>";
+}?>
+                                              
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="form-group"><label for="">Task</label>
                                         <input class="form-control" name="task" placeholder="Enter Task" type="text">
                                     </div>
                                 </div>
+                                <div class="col-sm-3">
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input class="form-control" name="category" placeholder="Enter Category" type="text">
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group">
+        <label for="nwords">No Of Words</label>
+        <input class="form-control" name="nwords" placeholder="Enter no. of words" type="text">
+    </div>
+</div>
+
   <div class="col-sm-3">
                                     <div class="form-group"><label for="">File Attachment</label>
                                         <input name="file_attachment" type="file">
