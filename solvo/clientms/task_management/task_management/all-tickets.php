@@ -43,7 +43,7 @@ include 'includes/wallet.php';
 </head>
 
 <body>
-  <!-- Start Page Loading 
+  <!-- Start Page Loading -
   <div id="loader-wrapper">
       <div id="loader"></div>        
       <div class="loader-section section-left"></div>
@@ -54,97 +54,17 @@ include 'includes/wallet.php';
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
   <!-- START HEADER -->
-  <header id="header" class="page-topbar">
-        <!-- start header nav-->
-       <img src="./images/logo.png" class="logoo">
-       
-        <!-- end header nav-->
-  </header>
+  
   <!-- END HEADER -->
 
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
   <!-- START MAIN -->
-  <div id="main">
+ 
     <!-- START WRAPPER -->
-    <div class="wrapper">
 
-      <!-- START LEFT SIDEBAR NAV-->
-      <aside id="left-sidebar-nav">
-        <ul id="slide-out" class="side-nav fixed leftside-navigation">
-            <li class="user-details  light-blue darken-2">
-            <div class="row">
-                <div class="col col s4 m4 l4">
-                    <img src="images/userav.png" alt="" class="circle responsive-img valign profile-image">
-                </div>
-				 <div class="col col s8 m8 l8">
-                    <ul id="profile-dropdown" class="dropdown-content">
-                        <li><a href="routers/logout.php"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col col s8 m8 l8">
-                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><?php echo $name;?> <i class="mdi-navigation-arrow-drop-down right"></i></a>
-                    <p class="user-roal"><?php echo $role;?></p>
-                </div>
-            </div>
-            </li>
-            <li><a href="admin-page.php" class=""><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
-<path d="M1 6H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
-<path d="M1 11H15" stroke="#61AAE4" stroke-width="2" stroke-linecap="round"/>
-</svg>
- New</a>
-            </li>
-          
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-editor-insert-invitation"></i> Orders</a>
-                            <div class="collapsible-body">
-                                <ul>
-								<li><a href="all-orders.php">All Orders</a>
-                                </li>
-								<?php
-									$sql = mysqli_query($con, "SELECT DISTINCT status FROM orders;");
-									while($row = mysqli_fetch_array($sql)){
-                                    echo '<li><a href="all-orders.php?status='.$row['status'].'">'.$row['status'].'</a>
-                                    </li>';
-									}
-									?>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                 <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li class="bold"><a class="collapsible-header waves-effect waves-light-blue"><i class="mdi-action-question-answer"></i> Tickets</a>
-                            <div class="collapsible-body">
-                                <ul>
-								<li class="bold active"><a href="all-tickets.php">All Tickets</a>
-                                </li>
-								<?php
-									$sql = mysqli_query($con, "SELECT DISTINCT status FROM tickets;");
-									while($row = mysqli_fetch_array($sql)){
-                                    echo '<li><a href="all-tickets.php?status='.$row['status'].'">'.$row['status'].'</a>
-                                    </li>';
-									}
-									?>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>			
-            <li class="bold"><a href="users.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Users</a>
-            <li class="bold"><a href="../task_management/task_management/employee.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Writers</a>
-            <li class="bold"><a href="../task_management/task_management/assign_task.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assign Task</a>
-            <li class="bold"><a href="../task_management/task_management/assign_task_list.php" class="waves-effect waves-light-blue"><i class="mdi-social-person"></i> Assigned Tasks</a>
 
-            </li>				
-        </ul>
-        <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only  light-blue"><i class="mdi-navigation-menu"></i></a>
-        </aside>
-      <!-- END LEFT SIDEBAR NAV-->
+      
 
       <!-- //////////////////////////////////////////////////////////////////////////// -->
 
@@ -165,7 +85,7 @@ include 'includes/wallet.php';
 		
 	        <!--start container-->
         <div class="container">
-          <p class="caption">List of all tickets</p>
+          <p class="caption">List of tickets by all customers</p>
           <div class="divider"></div>
 									<div id="work-collections">
 									<ul id="projects-collection" class="collection">

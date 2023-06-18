@@ -44,6 +44,14 @@ if (isset($_POST['login'])) {
 
 <head>
     <title> Word Solvo </title>
+    <!-- Favicons-->
+  <link rel="icon" href="img/favicon/favicon_32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">

@@ -53,8 +53,18 @@ $cancel_task = 0;
 if ($result = mysqli_query($connection, $retailer_account)) {
     $cancel_task = mysqli_num_rows($result);
 }?>
+<head>
+<!-- Favicons-->
+<link rel="icon" href="img/favicon/favicon_32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
+</head>
                     </div>
-                    <h6 class="element-header">Manager</h6>
+                    <h6 class="element-header">Admin Dashboard</h6>
                     <div class="element-content">
                         <div class="row">
                            

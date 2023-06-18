@@ -165,6 +165,7 @@ else{
           <div class="buttonn">
           <div class="input-field col s6 m6 l6">
             <p class="margin medium-small"><a href="../task_management/task_management/index.php">Manager Login</a></p>
+            <p class="margin medium-small"><a href="../task_management/task_management/index.php">QA Login</a></p>
             <p class="margin medium-small"><a href="../task_management/task_management/index.php">Writer Login</a></p>
           </div>         
         </div>
