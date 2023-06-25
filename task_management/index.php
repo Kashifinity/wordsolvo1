@@ -92,8 +92,6 @@ if (isset($_POST['login'])) {
       padding-left:300px;
 
   }
-
-
   input{
       padding:10px;
       height: 30px;
@@ -109,6 +107,45 @@ if (isset($_POST['login'])) {
       padding-left: 160px;
       font-size:20px;
     }
+  @media only screen and (max-width: 600px) {
+    .row{
+    color: red;
+    font-size: 30px;
+    padding-top: 100px;
+    padding-left: 0px;
+    
+    font-weight: 200;
+    
+    color: #023D8A;
+    
+
+  }
+  .center-align{
+  
+      
+      font-size:20px;
+    }
+  
+  input{
+      padding:10px;
+      height: 30px;
+      width: 250px;
+      margin-bottom: 20px;
+      margin-top:5px;
+      margin-left: 15px;
+      border-radius: 20px;
+      font-size:20px;
+    }
+  .form{
+      padding-left:0px;
+
+  }
+  }
+ 
+
+
+  
+    
     .buttonn{
       color: #023D8A;
      padding-left: 80px;
@@ -169,7 +206,7 @@ if (isset($_POST['login'])) {
           </div>         
         </div>
           <div class="buttonn">
-			<a href="../index.php" class="">Back to Home</a>
+			<a href="./index.php" class="">Back to Home</a>
           </div>
                     <!--                    <div class="form-check-inline"><label class="form-check-label">
                             <input name="checkPSWDREM" class="form-check-input" type="checkbox">Remember Me</label>
